@@ -1,0 +1,24 @@
+#pokeContainer ,.search{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+#pokeContainer > div {
+background-color:lightsteelblue;
+width: 300px;
+margin: 10px;
+text-align: center;
+line-height: 75px;
+font-size: 30px;
+}  
+
+
+.div-class{
+    background-color:lightsteelblue;
+    padding:20px;
+    margin:10px;
+    width : 300px;
+    text-align: center;
+}
