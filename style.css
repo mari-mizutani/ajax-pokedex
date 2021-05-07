@@ -22,3 +22,14 @@ font-size: 30px;
     width : 300px;
     text-align: center;
 }
+
+.h3-class{
+  font-weight: bolder;
+  font-size: 1.2em;
+  padding-top: 20px;
+}
+
+.p-class{
+  font-weight: inherit;
+  padding-top:0px;
+}
