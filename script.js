@@ -14,16 +14,16 @@ async function callApi(){
         
     
             //click function
-            document.getElementById("run").addEventListener("click",searchPokemon);
+            //document.getElementById("run").addEventListener("click",searchPokemon);
 
  
             //let result = "No pokemon found";
 
-            function searchPokemon(){
+            //function searchPokemon(){
 
-                let nameValue = document.getElementById("pokeId").value;
+                //let nameValue = document.getElementById("pokeId").value;
 
-                if(nameValue == pokeData.name){
+                //if(nameValue == pokeData.name){
 
                     const pokeContainer = document.getElementById("pokeContainer");
                     const profileDiv = document.createElement("div");
@@ -47,22 +47,22 @@ async function callApi(){
                     image.setAttribute("src", pokeData.sprites.front_default);
                     profileDiv.appendChild(image);
 
-                }
+                    //move
+                    const move = document.createElement("p");
+                    profileDiv.appendChild(move);
+                    move.innerText = pokeData.moves[0].move.name + "\n" + pokeData.moves[1].move.name  
+                    + " \n" + pokeData.moves[2].move.name  + "\n" + pokeData.moves[3].move.name;
+                    
+                    
+                    
 
-        
-        };
-        
+                    
 
-
-
-
-
-
+                //}
+            //};
 
         })   
-            
-        //};
-    });
 
+    });
 }
 callApi();
