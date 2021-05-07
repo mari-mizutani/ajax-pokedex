@@ -4,50 +4,58 @@ async function callApi(){
     const pokeApi = await generalUrl.json();
 
 
-    // const getPokemon = async pokeId =>{
-    //     const idUrl = 'https://pokeapi.co/api/v2/pokemon/${id}' ;
-    //     const idResult = await fetch(idUrl);
-    //     const pokemon = await idResult.json();
-    // }
-    
-
-
      // ---DOM---
     pokeApi.results.forEach((allPokemon)=>{
-        //console.log(allPokemon);
 
         let eachUrl = allPokemon.url ;
-        //console.log(eachUrl); 
         fetch(eachUrl)
         .then(response => response.json())
         .then(function(pokeData){
-        //console.log(pokeData)
-    
-    
-        //document.getElementById("run").addEventListener("click",getPokemonInfo);
         
-        //function getPokemonInfo(){
-            const pokeContainer = document.getElementById("pokeContainer");
-            const profileDiv = document.createElement("div");
-            profileDiv.classList.add("div-class");
-            pokeContainer.appendChild(profileDiv);
+    
+            //click function
+            document.getElementById("run").addEventListener("click",searchPokemon);
 
-            //name
-            const profileName = document.createElement("h3");
-            profileName.classList.add("h3-class");
-            profileDiv.appendChild(profileName);
-            profileName.innerText = pokeData.name;
+ 
+            //let result = "No pokemon found";
 
-            //id
-            const id = document.createElement("p");
-            id.classList.add("p-class");
-            profileDiv.appendChild(id);
-            id.innerText = "ID: " + pokeData.id;
+            function searchPokemon(){
 
-            //image
-            const image = document.createElement("img");
-            image.setAttribute("src", pokeData.sprites.front_default);
-            profileDiv.appendChild(image);
+                let nameValue = document.getElementById("pokeId").value;
+
+                if(nameValue == pokeData.name){
+
+                    const pokeContainer = document.getElementById("pokeContainer");
+                    const profileDiv = document.createElement("div");
+                    profileDiv.classList.add("div-class");
+                    pokeContainer.appendChild(profileDiv);
+            
+                    //name
+                    const profileName = document.createElement("h3");
+                    profileName.classList.add("h3-class");
+                    profileDiv.appendChild(profileName);
+                    profileName.innerText = pokeData.name;
+            
+                    //id
+                    const id = document.createElement("p");
+                    id.classList.add("p-class");
+                    profileDiv.appendChild(id);
+                    id.innerText = "# " + pokeData.id;
+            
+                    //image
+                    const image = document.createElement("img");
+                    image.setAttribute("src", pokeData.sprites.front_default);
+                    profileDiv.appendChild(image);
+
+                }
+
+        
+        };
+        
+
+
+
+
 
 
 
