@@ -6,7 +6,13 @@
 in May 2021
 
 Practice using API and fetching the data.
-It was one of the most difficult exercises of Javascript for me. 
-I have not finished the searching box part yet. 
+It was one of the most challenging exercises of Javascript for me at that moment, since I didn't have any knowledge about AJAX before. 
+
+
+### Need to fix
+- Searching function (with name or ID)
+- Show only the results from the search
 
 https://mari-mizutani.github.io/ajax-pokedex/
+
+![screenshot](screenshot.png)
